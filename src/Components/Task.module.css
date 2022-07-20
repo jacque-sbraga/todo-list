@@ -1,0 +1,101 @@
+.taskItem{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-start;
+    background-color: var(--gray-500);
+    padding: 1rem;
+    border: 1px solid var(--gray-400);
+    border-radius: 8px;
+    box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.06);
+    color: var(--gray-100);
+    gap: 12px;
+}
+
+li + li{
+    margin-top: 12px
+}
+
+.taskItem div{
+    display: flex;
+    gap: 12px;
+}
+
+.check {
+    cursor: pointer;
+    position: relative;
+}
+
+.checkmark{
+    position: absolute;
+    display: block;
+    top: 0;
+    left: 0;
+    height: 16px;
+    width: 16px;
+    content: '';
+    border-radius: 50%;
+    border: 2px solid var(--blue-300);
+    transition: all 0.2s ease-in;
+}
+
+.checkmark:after{
+    content: '';
+    position: absolute;
+    display: block;
+    left: 4px;
+    top: 1px;
+    width: 3px;
+    height: 7px;
+    border: solid var(--gray-100);
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg); 
+    visibility: hidden;
+}
+
+.check:hover input ~ .checkmark{
+    border-color: var(--blue-600);
+}
+
+.check input:checked ~ .checkmark{
+    background-color: var(--purple-500);
+    border-color: var(--purple-500);
+}
+
+.check input:checked ~ .checkmark:after{
+    visibility: visible;
+}
+
+.check input[type='checkbox']{
+    display: none;
+}
+
+.description, .taskCompleted{
+    font-size: 0.875rem;
+    font-weight: 400;
+    line-height: 1.4;
+    padding-left: 1rem;
+}
+
+.taskCompleted {
+    text-decoration: line-through;
+    color: var(--gray-300);
+}
+
+.taskItem button {
+    background-color: transparent;
+    border: none;
+    color: var(--gray-300);
+    cursor: pointer;
+    transition: color 0.2s ease-in;
+}
+
+.taskItem button:hover{
+    color: var(--red-500);
+}
+
+@media (max-width:375px) {
+    .description, .taskCompleted{
+        font-size: 1.4rem;
+    }
+}

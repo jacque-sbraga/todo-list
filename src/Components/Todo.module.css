@@ -1,0 +1,92 @@
+.form {
+    display: flex;
+    gap: 8px;
+    margin-top: -25px;
+}
+
+.form input,
+.form button{
+    padding: 1rem;
+    border-radius: 8px;
+    border: none;
+}
+
+.form input{
+    background-color: var(--gray-500);
+    font-size: 1rem;
+    flex:1;
+    outline: var(--gray-700) solid 1px;
+    transition: outline .2s ease-in;
+    color: var(--gray-100);
+}
+
+.form input:focus{
+    outline: var(--blue-300) solid 1px;
+}
+
+.form button{
+    display: flex;
+    font-size: 0.875rem;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--blue-600);
+    color: var(--gray-100);
+    cursor: pointer;
+    font-weight: 700;
+    transition: background-color 0.2s ease-in;
+}
+.form button:hover{
+    background-color: var(--blue-300);
+}
+
+.tasks {
+    margin-top: 4rem;
+}
+
+.info {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+}
+
+.total,
+.completed{
+    font-weight: 700;
+    font-size: 0.875rem;
+}
+
+.total {
+    color: var(--blue-300);
+}
+
+.completed {
+    color: var(--purple-300);
+}
+
+.total span,
+.completed span {
+    padding: 0.125rem 0.5rem;
+    border-radius: 10px;
+    background-color: var(--gray-400);
+    color: var(--gray-200);
+    margin-left: 0.5rem;
+}
+
+@media (max-width: 375px) {
+    .form{
+        margin-top: -18px;
+    }
+
+     
+    .form input{
+        width: 50%;
+    }
+    .form input, .form button{
+        font-size: 1.4rem;
+        border-radius: 4px;
+    }
+
+    .total, .completed{
+        font-size: 1.4rem;
+    }
+}
